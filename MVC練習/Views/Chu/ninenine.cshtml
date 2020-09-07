@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<table style=" width : 100%" align="center" border="1">
+    <tr>
+    @for (int i = 1; i <= 9; i++)
+    {
+    <td>
+        <p>@i</p>
+    </td>
+    }
+        </tr>
+
+    @for (int k = 1; k <= (int)ViewData["MaxX"]; k++)
+    {
+        <tr>
+
+            @for (int m = 1; m <= (int)ViewData["MaxY"]; m++)
+            {
+                <td>
+                    @k * @m = @(k*m)
+                </td>
+            }
+        </tr>
+    }
+</table>

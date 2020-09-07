@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    @model List<userModel>
+    @{
+        ViewBag.Title = "User List";
+     }
+    @foreach(var user in Model) 
+    {
+        @Html.Partial("_UserInfo",user)
+        <hr />
+    }
+
+
+    @{
+        var date = DateTime.Now;
+        date -= TimeSpan.FromDays(7);
+    }
+    <div>@date</div>
+
+    @{ bool flag = true;
+        int number = 3;
+    }
+    @if (flag)
+    {
+        <div>flag is true</div>
+    }
+    else
+    {
+        <div>flag is false</div>
+    }
+
+    @switch (number) 
+    {
+        case 3:
+            <div>number is lucky 3</div>
+            break;
+        default:
+            <div>number is @number</div>
+            break;
+    }
+    @for(var i = 0; i < number; i++)
+    {
+        <div>For sample: @i</div>
+    }
+    @try
+    {
+        throw new Exception("somthing wrong");
+    }
+    catch(Exception ex) 
+    {
+        <div>@ex.Message</div>
+    } 
+</div>
