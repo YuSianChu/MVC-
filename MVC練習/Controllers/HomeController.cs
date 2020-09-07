@@ -31,7 +31,7 @@ namespace MVC練習.Controllers
               {
                   Id = 1,
                   Name = "piggy",
-                  Email = "piggy@XXX.XXX"
+                  Email = "piggy@XXX.XXXXXX"
               },
               new userModel()
               {
